@@ -1,0 +1,17 @@
+default:
+  tags:
+    - common
+
+stages:
+  - test
+
+build_test:
+  stage: test
+  image: docker.io/nullix/mik32_tests:latest
+  script:
+    - make
+unit_test:
+  stage: test
+  image: docker.io/nullix/mik32_tests:latest
+  script:
+    - make tests
